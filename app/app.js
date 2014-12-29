@@ -11,6 +11,7 @@
 
 var fs = require("fs");
 var guideFiles = [];
+var guideNames = [];
 var guidePath = '/Users/sperberx/dev/angular.js/docs/content/guide/';
 
 guideFiles[0] = { filename: 'introduction', heading: 'Introduction' };
@@ -42,3 +43,71 @@ guideFiles[25] = { filename: 'production', heading: 'Running in Production' };
 guideFiles[26] = { filename: 'migration', heading: 'Migrating from Previous Versions' };
 guideFiles[27] = { filename: 'index', heading: 'Table of Contents' };
 
+guideNames[0] = 'introduction';
+guideNames[1] = 'concepts';
+guideNames[2] = 'databinding';
+guideNames[3] = 'controller';
+guideNames[4] = 'services';
+guideNames[5] = 'scope';
+guideNames[6] = 'di';
+guideNames[7] = 'templates';
+guideNames[8] = 'expression';
+guideNames[9] = 'filter';
+guideNames[10] = 'forms';
+guideNames[11] = 'directive';
+guideNames[12] = 'animations';
+guideNames[13] = 'module';
+guideNames[14] = 'compiler';
+guideNames[15] = 'providers';
+guideNames[16] = 'bootstrap';
+guideNames[17] = 'unit-testing';
+guideNames[18] = 'e2e-testing';
+guideNames[19] = '$location';
+guideNames[20] = 'css-styling';
+guideNames[21] = 'i18n';
+guideNames[22] = 'security';
+guideNames[23] = 'accessibility';
+guideNames[24] = 'ie';
+guideNames[25] = 'production';
+guideNames[26] = 'migration';
+guideNames[27] = 'index';
+
+var fileTitles = {
+'introduction' :  'Introduction',
+'concepts' :  'Conceptual Overview',
+'databinding' :  'Data Binding',
+'controller' :  'Controllers',
+'services' :  'Services',
+'scope' :  'Scopes',
+'di' :  'Dependency Injection',
+'templates' :  'Templates',
+'expression' :  'Expressions',
+'filter' :  'Filters',
+'forms' :  'Forms',
+'directive' :  'Directives',
+'animations' :  'Animations',
+'module' :  'Modules',
+'compiler' :  'HTML Compiler',
+'providers' :  'Providers',
+'bootstrap' :  'Bootstrap',
+'unit-testing' :  'Unit Testing',
+'e2e-testing' :  'E2E Testing',
+'$location' :  'Using $location',
+'css-styling' :  'Working With CSS',
+'i18n' :  'i18n and l10n',
+'security' :  'Security',
+'accessibility' :  'Accessibility',
+'ie' :  'Internet Explorer Compatibility',
+'production' :  'Running in Production',
+'migration' :  'Migrating from Previous Versions',
+'index' :  'Table of Contents'
+}
+
+Object.keys(fileTitles).forEach(function(key) {
+    var value = fileTitles[key];
+    console.log('The file named ' +  key + '.ngdoc has the title "' + value + '".');
+});
+// Object.keys(guideNames).forEach(function(key, i){
+//     var value = guideNames[key];
+//     console.log(value);
+// })
