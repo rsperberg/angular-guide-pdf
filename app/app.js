@@ -13,6 +13,7 @@ var fs = require("fs");
 var guideFiles = [];
 var guideNames = [];
 var guidePath = '/Users/sperberx/dev/angular.js/docs/content/guide/';
+var extension = '.ngdoc';
 
 guideFiles[0] = { filename: 'introduction', heading: 'Introduction' };
 guideFiles[1] = { filename: 'concepts', heading: 'Conceptual Overview' };
@@ -103,11 +104,39 @@ var fileTitles = {
 'index' :  'Table of Contents'
 }
 
-Object.keys(fileTitles).forEach(function(key) {
-    var value = fileTitles[key];
-    console.log('The file named ' +  key + '.ngdoc has the title "' + value + '".');
-});
+/*  access all the filenames and titles stored in fileTitles  */
+// Object.keys(fileTitles).forEach(function(key) {
+//     var value = fileTitles[key];
+//     console.log('The file named ' +  key + '.ngdoc has the title "' + value + '".');
+// });
+
+/*  access all the filenames, as stored in guideNames  */
 // Object.keys(guideNames).forEach(function(key, i){
 //     var value = guideNames[key];
 //     console.log(value);
 // })
+
+/*  see if I can read a file  */
+var pathAndFile = guidePath + guideNames[0] + extension;   // introduction.ngdoc
+var aFile = fs.readFile(pathAndFile, 'utf8', function (err,data) {
+    if (err) {
+        return console.log(err);
+    }
+    console.log(data);
+    console.log('aFile is an array T/F: ' + Array.isArray(data));
+    console.log('the type of data is ',typeof data);
+
+    var sortOrderRegex = /@sortOrder (\d{3})/;
+    var result = sortOrderRegex.exec(data);
+    console.log('matched line is ', result[0]);
+    var orderNumber =result[0].substring(11, 14);
+    console.log('extracted order number is', orderNumber);
+
+});
+
+
+// console.log('aFile is an array T/F: ' + Array.isArray(aFile));
+
+/*  read a file and write it to a different file  */
+// var fs = require('fs');
+// fs.createReadStream('input.txt').pipe(fs.createWriteStream('output.txt'));
