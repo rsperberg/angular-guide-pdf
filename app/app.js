@@ -103,6 +103,37 @@ var fileTitles = {
 'migration' :  'Migrating from Previous Versions',
 'index' :  'Table of Contents'
 }
+var fileOrder = {
+'introduction' :  100,
+'concepts' :  200,
+'databinding' :  210,
+'controller' :  220,
+'services' :  230,
+'scope' :  240,
+'di' :  250,
+'templates' :  260,
+'expression' :  270,
+'filter' :  280
+'forms' :  290,
+'directive' :  300,
+'animations' :  310,
+'module' :  320,
+'compiler' :  330,
+'providers' :  340,
+'bootstrap' :  350,
+'unit-testing' :  410,
+'e2e-testing' :  420,
+'$location' :  500,
+'css-styling' :  510,
+'i18n' :  520,
+'security' :  525,
+'accessibility' :  530,
+'ie' :  530,
+'production' :  540,
+'migration' :  550,
+'index' :  ''
+}
+
 
 /*  access all the filenames and titles stored in fileTitles  */
 // Object.keys(fileTitles).forEach(function(key) {
